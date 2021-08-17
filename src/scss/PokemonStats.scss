@@ -1,0 +1,86 @@
+@import 'Global.scss';
+
+.stat-container {
+	display: flex;
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 25px;
+	flex-direction: column;
+	position: relative;
+	@include card-shadow;
+	@include rounded-corner-card;
+
+	.total {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		margin: 0;
+		font-size: 35px;
+		line-height: 33px;
+		font-weight: normal;
+	}
+
+	.header-with-icon {
+		font-size: 22px;
+		margin: 0 0 20px 0;
+	}
+
+	.stat-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			padding-bottom: 10px;
+
+			.stat-item {
+				.header-with-icon {
+					font-size: 16px;
+					margin: 0;
+				}
+			}
+
+			.bar {
+				width: 0;
+				max-width: 100%;
+				height: 20px;
+				margin: 8px 0;
+				text-align: center;
+				transition: width 1.5s ease;
+				@include rounded-corner-card;
+
+				p {
+					margin: 0;
+					font-size: 12px;
+					line-height: 20px;
+					font-weight: bold;
+					color: #fff;
+				}
+
+				&.hp {
+					background-color: #45F907;
+				}
+
+				&.attack {
+					background-color: #F70A0A;
+				}
+
+				&.defense {
+					background-color: #0A9AF7;
+				}
+
+				&.special-attack {
+					background-color: #FA32F4;
+				}
+
+				&.special-defense {
+					background-color: #7D06D4;
+				}
+
+				&.speed {
+					background-color: #FAD632;
+				}
+			}
+		}
+	}
+}

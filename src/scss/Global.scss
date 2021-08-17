@@ -1,0 +1,14 @@
+$primary-color: #ee1515;
+$secondary-color: #f0f0f0;
+$tertiary-color: #222224;
+$primary-background: #9bd1fa;
+$primary-card-background: #ffec94;
+$primary-card-active: #b0e57c;
+
+@mixin card-shadow {
+	box-shadow: 1px 0px 8px 0px rgba(34,34,36,0.88);
+}
+
+@mixin rounded-corner-card {
+	border-radius: 10px;
+}

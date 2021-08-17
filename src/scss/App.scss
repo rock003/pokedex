@@ -1,0 +1,96 @@
+@import './Global.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: $primary-background;
+}
+  
+.App {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1fr;
+	padding-top: 35px;
+}
+
+.filter-container {
+	height: 200px;
+    width: 100%;
+    background: $primary-card-background;
+    position: fixed;
+    top: -170px;
+    left: 0;
+    z-index: 99;
+    transition: top 0.75s;
+    border-radius: 0 0 10px 10px;
+	display: flex;
+	flex-direction: column;
+	@include card-shadow;
+
+	&.active {
+		top: 0
+	}
+
+	.toggle-btn {
+		background: transparent;
+		border: none;
+		color: $primary-color;
+		font-size: 40px;
+		display: block;
+		margin: auto auto 0 auto;
+		cursor: pointer;
+
+		svg {
+			margin-bottom: -25px;
+		}
+	}
+}
+
+.pokemon-list {
+	grid-column: 1/5;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	max-height: 90%;
+    overflow-y: scroll;
+
+	li {
+		padding: 15px;
+
+		.clear-filter-btn {
+			border: none;
+			background: $tertiary-color;
+			color: $secondary-color;
+			width: 100%;
+			padding: 10px;
+			text-transform: uppercase;
+			cursor: pointer;
+			@include card-shadow;
+			@include rounded-corner-card;
+		}
+
+		&.load-more {
+			button {
+				width: 80%;
+				margin: 0 auto;
+				display: block;
+				font-size: 20px;
+				background-color: $tertiary-color;
+				border: none;
+				padding: 5px;
+				color: #fff;
+				@include card-shadow;
+				@include rounded-corner-card;
+
+				&:disabled {
+					background-color: $secondary-color;
+					color: #ddd;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
